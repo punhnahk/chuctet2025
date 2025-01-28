@@ -59,7 +59,7 @@ footer {
 
 .cay-dao {
   position: relative;
-  width: min(45rem, 60%);
+  width: min(35rem, 60%);
   left: 36%;
 }
 
@@ -102,11 +102,11 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  padding: 5px;
+  background-color: #fbd8d8;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
   display: none;
   flex-direction: column;
   gap: 15px;
@@ -123,7 +123,7 @@ footer {
 }
 
 .image {
-  width: min(150px, 80%);
+  width: min(250px, 50%);
   height: auto;
   aspect-ratio: 1/1;
   object-fit: contain;
@@ -274,16 +274,4 @@ footer {
 .music-toggle:hover {
   transform: scale(1.1);
   background: rgba(0, 0, 0, 0.5);
-}
-
-.tiktok-logo {
-  position: fixed;
-  bottom: 15px;
-  left: 15px;
-  z-index: 1000;
-}
-
-.tiktok-logo img {
-  width: 35px;
-  height: auto;
 }
