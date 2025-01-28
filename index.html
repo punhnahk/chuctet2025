@@ -46,7 +46,7 @@
         <strong>Tết <span id="currentYear"></span></strong>
       </p>
     </footer>
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" loop autoplay>
       <source
         src="https://res.cloudinary.com/dwyso05qz/video/upload/v1738073260/test/w12llnpaz15vwvqv4e8j.mp3"
         type="audio/mp3"
@@ -60,6 +60,34 @@
       // Tự động hiển thị năm hiện tại
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
+    </script>
+    <script>
+      // Lấy phần tử audio
+      const bgMusic = document.getElementById("bgMusic");
+
+      // Đặt âm lượng ban đầu
+      bgMusic.volume = 0; // Bắt đầu từ 0
+
+      // Đảm bảo nhạc được phát tự động
+      bgMusic.play().catch((err) => {
+        console.warn("Phát nhạc bị chặn bởi trình duyệt: ", err);
+      });
+
+      // Hàm tăng dần âm lượng
+      const fadeInSound = () => {
+        let volume = 0;
+        const fadeInterval = setInterval(() => {
+          if (volume < 1) {
+            volume += 0.002; // Tăng âm lượng từng bước (0.05 mỗi 100ms)
+            bgMusic.volume = Math.min(volume, 0.6); // Đảm bảo không vượt quá 1
+          } else {
+            clearInterval(fadeInterval); // Dừng khi đạt âm lượng tối đa
+          }
+        }, 100); // Cứ 100ms tăng âm lượng
+      };
+
+      // Bắt đầu hiệu ứng tăng dần âm lượng
+      fadeInSound();
     </script>
   </body>
 </html>
